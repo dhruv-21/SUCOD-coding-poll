@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding_Survey</title>
+    <style>
+        #kbtn {
+            /* Example */
+
+            margin-right: 12px;
+            width: 220px;
+            height: 103px;
+            font-family: Rockwell;
+            color: #ffffff;
+            /* Gray 6 */
+            background: #f2f2f205;
+
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+
+        }
+
+        .content {
+
+            padding: 2.2em;
+        }
+
+        #obtn {
+            /* Example */
+
+            margin-right: 12px;
+            width: 200px;
+            height: 53px;
+
+            /* Gray 6 */
+            background: #fafafa00;
+            border: 1px solid #D2B102;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+
+        }
+
+        .lbtn {
+            /* Example */
+            margin-top: 10px;
+            text-decoration: none;
+            width: 170px;
+            height: 133px;
+            color: #ffffff;
+            font-family: Rockwell;
+            background-image: linear-gradient(#ff0000, #360101);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+
+
+        }
+
+        * {
+            margin: 1px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: linear-gradient(#000524, #333333);
+            background-attachment: fixed;
+
+            height: 50px;
+
+            color: rgb(83, 0, 151);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-bottom: 2px;
+            border: 4px solid #0000009d;
+            box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+        }
+
+        ::selection {
+            display: flex;
+
+        }
+
+        .wrapper {
+            margin-top: 15%;
+            margin-left: 30px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 800px;
+            height: 71%;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            border: 10px solid #000000f3;
+            box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 0.5rem;
+        }
+
+        .wrapper header {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .wrapper .boxp {
+            margin: 15px 0 15px 0;
+        }
+
+        .boxp label {
+            display: block;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            padding: 8px 15px;
+            border: 2px solid #e6e6e6;
+            transition: all 0.2s ease;
+        }
+
+        .boxp label:hover {
+            border-color: #ddd;
+        }
+
+        label.selected {
+            border-color: #6665ee !important;
+        }
+
+        label .row {
+            display: flex;
+            pointer-events: none;
+            justify-content: space-between;
+        }
+
+        label .row .column {
+            display: flex;
+            align-items: center;
+        }
+
+        #opt {
+            border: 10px solid #000000;
+            box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .boxp {
+
+
+            background-attachment: fixed;
+
+            max-height: 800px;
+
+            color: rgb(83, 0, 151);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-bottom: 120px;
+            border: 0.1px solid #ffffff;
+            box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+        }
+
+        section {
+            background-image: url('backiee-205612.jpg');
+            height: 100%;
+            width: 70%;
+            opacity: 98%;
+
+
+        }
+
+        #evr {
+            width: 100%;
+        }
+
+        #mqp {
+            color: rgb(255, 255, 255);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+            border: 0.1px solid #ff1717;
+            box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+            font-size: 20px;
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            font-family: Rockwell;
+            border: #ffffffaf 2px solid;
+            margin-top: 2px;
+            font-size: 30px;
+            margin: 56px;
+        }
+
+        #yvm {
+            border-radius: 39rem;
+            border: #000524 20px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <br>
+        <input type="search" name="" id="evr" placeholder="Find in Page">
+        <marquee behavior="" direction="" id="mqp">SUCOD: Vote Now!!..We have already recieved more than 100 entries, ant still
+            counting..</marquee>
+<p>Welcome to SUCOD online survey </p>
+        <div class="wrapper">
+
+            <header>Which programming language do you prefer?</header> <br>
+
+            <h2>Vote For Your Favourite one!</h2>
+            <div class="boxp">
+
+                <label for="opt-1" class="opt-1">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"> </span>
+                            <span class="text">LANGUAGE </span>
+                        </div>
+                        <span class="percent">TYPE </span>
+                        <span class="percent">APPROX SHARE</span>
+                    </div>
+                    <div class="progress" style='--w:30;'></div>
+                </label>
+                <label for="opt-2" class="opt-2">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"></span>
+                            <span class="text">Python</span>
+
+
+                        </div>
+
+                        <span class="percent">Most popular and easy</span>
+                        <span class="percent">29%</span>
+                    </div>
+                    <div class="progress" style='--w:20;'></div>
+                </label>
+                <label for="opt-3" class="opt-3">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"></span>
+                            <span class="text">Java</span>
+                        </div>
+                        <span class="percent">Most required language </span>
+                        <span class="percent">19%</span>
+                    </div>
+                    <div class="progress" style='--w:40;'></div>
+                </label>
+                <label for="opt-4" class="opt-4">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"></span>
+                            <span class="text">JavaScript</span>
+
+                        </div>
+                        <span class="percent">Most popular for web and game developement</span>
+                        <span class="percent">8%</span>
+
+                    </div>
+                    <div class="progress" style='--w:30;'></div>
+                </label>
+                <label for="opt-2" class="opt-2">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"></span>
+                            <span class="text">C#</span>
+
+
+                        </div>
+
+                        <span class="percent">Mostly used to create VR games</span>
+                        <span class="percent">7.28%</span>
+                    </div>
+                    <div class="progress" style='--w:20;'></div>
+                </label>
+                </label>
+                <div class="progress" style='--w:30;'></div>
+                </label>
+                <label for="opt-2" class="opt-2">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"></span>
+                            <span class="text">PHP</span>
+
+
+                        </div>
+
+                        <span class="percent">Most used in static web applications</span>
+                        <span class="percent">6.09%</span>
+                    </div>
+                    <div class="progress" style='--w:20;'></div>
+                </label>
+                <div class="progress" style='--w:30;'></div>
+                </label>
+                <label for="opt-2" class="opt-2">
+                    <div class="row">
+                        <div class="column">
+                            <span class="circle"></span>
+                            <span class="text">C++</span>
+
+
+                        </div>
+
+                        <span class="percent">Most flexible programming language. </span>
+                        <span class="percent">5.90%</span>
+                    </div>
+
+
+    </section>
+
+
+    <p> I Choose " this" <br> programming language <br>because- 'Your answer'
+        <br>
+
+
+        <input type="text" name="Type" id="kbtn" placeholder=" Enter details(Vote Anonymously)">
+        <br>
+        <br>
+
+        <a href="bluemarble.html" class="lbtn">SUBMIT VOTE</a><br><br> <img
+            src="your-vote-matters-sign-on-260nw-1786592159.jpg" alt="" id="yvm"><br>
+        <br><br>
+
+</body>
+
+</html>
